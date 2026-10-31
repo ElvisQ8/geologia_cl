@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo Unificado | Cerro Lindo</title>
+<style>
+  :root{
+    --bg:#f3f6f8;--card:#ffffff;--line:#d5dde5;--ink:#182533;--muted:#607182;--brand:#1d5f6b;
+    --brand2:#e8f3f5;--soft:#eef4f8;--warn:#fff6e7;--accent:#f5a524;--danger:#8e2d2d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);font:14px/1.5 "Segoe UI",Arial,sans-serif;color:var(--ink)}
+  header{background:linear-gradient(135deg,#173041,#22485f);color:#fff;padding:20px 4vw 18px;border-bottom:1px solid #204357}
+  .header-wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;max-width:1600px;margin:auto}
+  .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:#a9d9dd;margin-bottom:6px}
+  h1{margin:0 0 6px;font-size:clamp(24px,3vw,36px);line-height:1.1}
+  .head-p{max-width:920px;color:#dce7ee;margin:0}
+  .signature{font-size:11px;font-weight:700;letter-spacing:.09em;color:#b5d5dd;align-self:flex-end;white-space:nowrap}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:18px;max-width:1600px;margin:18px auto;padding:0 18px 24px}
+  .sidebar{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;align-self:start;position:sticky;top:16px}
+  .sidebar h2{font-size:11px;margin:4px 8px 10px;letter-spacing:.14em;text-transform:uppercase;color:#6c7d8c}
+  .tab{display:flex;align-items:center;width:100%;gap:10px;background:transparent;border:0;border-radius:12px;padding:11px 12px;cursor:pointer;text-align:left;font-weight:700;color:#334657}
+  .tab small{font-weight:600;color:#7c8c98}
+  .tab.active,.tab:hover{background:var(--brand2);color:#0f5964}
+  .tabnum{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:#edf2f5;font-size:12px;flex:0 0 28px}
+  .tab.active .tabnum{background:#d6eef1}
+  .side-note{font-size:12px;color:var(--muted);background:#f8fbfc;border:1px dashed #c7d6df;border-radius:12px;padding:10px;margin-top:12px}
+  .main{min-width:0}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  input[type="text"],input[type="number"],select,textarea{width:100%;border:1px solid #cad5df;border-radius:10px;background:#fff;padding:10px 12px;font:inherit;color:inherit}
+  input[type="file"]{display:none}
+  textarea{min-height:88px;resize:vertical}
+  .search{flex:1;min-width:260px}
+  .btn{appearance:none;border:1px solid #c9d6df;background:#fff;color:#263747;border-radius:10px;padding:10px 13px;cursor:pointer;font-weight:700}
+  .btn:hover{background:#f7fbfd}
+  .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .btn.primary:hover{background:#154f58}
+  .btn.soft{background:var(--brand2);border-color:#d7e9ec;color:#0d5a65}
+  .btn.warn{background:var(--warn)}
+  .btn.danger{background:#fff3f3;border-color:#eccaca;color:var(--danger)}
+  .btn.icon{padding:8px 10px;min-width:40px}
+  .panel{display:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 8px rgba(19,38,54,.04)}
+  .panel.active{display:block}
+  .panel + .panel{margin-top:12px}
+  .panel h2{margin:0 0 8px;font-size:24px}
+  .sub{margin:0 0 14px;color:var(--muted)}
+  .helper-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:0 0 12px}
+  .helper{background:#f8fbfd;border:1px solid #dae4ea;border-radius:12px;padding:12px}
+  .helper b{display:block;margin-bottom:4px}
+  .notice{background:var(--warn);border:1px solid #f0dfba;border-radius:12px;padding:12px;margin-bottom:12px;color:#64490f}
+  .notice.ok{background:#eef8f6;border-color:#d4e8e3;color:#245f58}
+  .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+  table{width:100%;border-collapse:collapse;min-width:920px;background:#fff}
+  th,td{border-bottom:1px solid #e7edf2;padding:10px 11px;text-align:left;vertical-align:top}
+  th{background:#f2f6f8;font-size:12px;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0;z-index:1}
+  tr:hover td{background:#fcfeff}
+  .code{display:inline-block;padding:3px 7px;border-radius:999px;background:#edf2f6;font:700 12px/1.3 Consolas,monospace}
+  .small{font-size:12px;color:var(--muted)}
+  .badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#eef4f7;font-size:11px;font-weight:700;color:#4a6070}
+  .badge.user{background:#eaf6ea;color:#32663a}
+  .row-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .photo-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;background:#edf5fb;font-size:12px;color:#2c5878;font-weight:700}
+  .swatch{display:inline-block;width:54px;height:26px;border:1px solid #9cacb8;border-radius:6px;vertical-align:middle}
+  .pattern{display:inline-block;width:96px;height:34px;border:1px solid #9dacb7;border-radius:4px;background-color:#fff}
+  .diag-blue{background-image:repeating-linear-gradient(45deg,transparent 0 8px,#268adf 8px 11px)}
+  .diag-red{background-image:repeating-linear-gradient(45deg,transparent 0 8px,#ea3a3a 8px 11px)}
+  .alt-weak{background-image:repeating-linear-gradient(45deg,transparent 0 9px,#8b8b8b 9px 11px)}
+  .alt-med{background-image:repeating-linear-gradient(45deg,transparent 0 8px,#8e8e8e 8px 10px),repeating-linear-gradient(-45deg,transparent 0 8px,#8e8e8e 8px 10px)}
+  .alt-strong{background:#777}
+  .section-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .addbox{display:none;border:1px dashed #bfd2dd;background:#f8fbfd;border-radius:14px;padding:14px;margin-bottom:12px}
+  .addbox.open{display:block}
+  .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+  .full{grid-column:1/-1}
+  .empty{padding:20px;text-align:center;color:#6b7c8a}
+  .footer-note{font-size:12px;color:#687987;margin-top:12px}
+  .modal-shell{position:fixed;inset:0;background:rgba(10,20,30,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000}
+  .modal-shell.open{display:flex}
+  .modal{width:min(1120px,96vw);height:min(86vh,760px);background:#0f1c26;color:#fff;border:1px solid #304657;border-radius:18px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}
+  .modal-head,.modal-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:#112330}
+  .modal-title{font-size:16px;font-weight:700}
+  .modal-stage{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0b141b}
+  .modal-stage img{max-width:none;max-height:none;transform-origin:center center;transition:transform .16s ease}
+  .modal-msg{color:#c8d3dc;text-align:center;padding:20px}
+  .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);border:0;background:rgba(255,255,255,.14);color:#fff;width:44px;height:44px;border-radius:999px;cursor:pointer;font-size:22px}
+  .nav-arrow:hover{background:rgba(255,255,255,.24)}
+  .nav-arrow.left{left:16px}.nav-arrow.right{right:16px}
+  .zoom-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .counter{color:#b9c7d2;font-size:13px}
+  .hide{display:none !important}
+  @media(max-width:900px){
+    .layout{display:block;padding:0 10px 20px}
+    .sidebar{position:static;margin-bottom:12px}
+    .sidebar .tabs{display:flex;overflow:auto;gap:6px;flex-wrap:nowrap}
+    .tab{white-space:nowrap;min-width:max-content}
+    .panel{padding:14px}
+    table{min-width:780px}
+  }
+  @media print{
+    .sidebar,.toolbar,.section-actions,.row-actions,.footer-note,.head-actions,.addbox,.notice{display:none !important}
+    .layout{display:block;max-width:none;margin:0;padding:0}
+    .panel{display:block !important;box-shadow:none;border-color:#cfd9e1;break-before:page}
+    header{background:#fff;color:#111;border-bottom:0}
+    .head-p{color:#333}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-wrap">
+    <div>
+      <div class="eyebrow">UCL · Geología · Logueo · Geologia mina · Modelamiento · Estimacion · Geometalurgia </div>
+      <h1>Catálogo unificado de criterios geológicos</h1>
+      <p class="head-p">Estandarizando la geologia.</p>
+    </div>
+    <div class="signature">BY: EQ.</div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h2>Módulos</h2>
+    <div class="tabs" id="tabs"></div>
+
+  </aside>
+
+  <main class="main">
+    <div class="toolbar">
+      <input class="search" id="globalSearch" type="text" placeholder="Buscar códigos, minerales, alteraciones, texturas, dominios...">
+      <button class="btn" id="clearSearch">Limpiar</button>
+      <button class="btn" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+
+    <section class="panel active" id="panel-domains"></section>
+    <section class="panel" id="panel-textures"></section>
+    <section class="panel" id="panel-alterations"></section>
+    <section class="panel" id="panel-minerals"></section>
+    <section class="panel" id="panel-colors"></section>
+    <section class="panel" id="panel-abbrevs"></section>
+  </main>
+</div>
+
+<div class="modal-shell" id="photoModalShell" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="photoModalTitle">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="photoModalTitle">Galería</div>
+        <div class="counter" id="photoCounter">0 / 0</div>
+      </div>
+      <div class="zoom-actions">
+        <button class="btn icon" id="zoomOut">−</button>
+        <button class="btn icon" id="zoomReset">100%</button>
+        <button class="btn icon" id="zoomIn">+</button>
+        <button class="btn danger" id="closePhotoModal">Cerrar</button>
+      </div>
+    </div>
+    <div class="modal-stage" id="photoStage">
+      <button class="nav-arrow left" id="prevPhoto" aria-label="Foto anterior">‹</button>
+      <img id="modalImage" alt="Foto catalogada">
+      <div class="modal-msg hide" id="modalEmpty">Este ítem aún no tiene fotos cargadas.</div>
+      <button class="nav-arrow right" id="nextPhoto" aria-label="Foto siguiente">›</button>
+    </div>
+    <div class="modal-foot">
+      <div class="small" id="modalMeta">Usa los controles para moverte por el carrusel y hacer zoom.</div>
+      <div class="small">El modal solo se cierra con el botón <b>Cerrar</b>.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const STORAGE_KEY = 'cerro_lindo_catalogo_v2';
+const TABS = [
+  {id:'domains', num:'01', label:'Dominios / litología'},
+  {id:'textures', num:'02', label:'Texturas'},
+  {id:'alterations', num:'03', label:'Alteración'},
+  {id:'minerals', num:'04', label:'Mineralización'},
+  {id:'colors', num:'05', label:'Colores y hatch'},
+  {id:'abbrevs', num:'06', label:'Abreviaturas'}
+];
+
+const DEFAULT_DATA = {
+  domains:[
+    {id:uid(), codeNexa:'SPB', name:'Sulfuro primario de baritina', description:'Sulfuros >50% incluyendo baritina; baritina >10%. Presencia de Ccpy, Spha y Galn.', criteria:'Subdominios: SPB1 (Zn/Pb), SPB2 (Cu), SPB3 (baja ley, alta baritina). Hábitos observados: masivo, bandeado o granular.', en:'Primary sulphide of barite.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'SPP', name:'Sulfuro primario de pirita', description:'Matriz de pirita >50%; baritina <10%; puede o no contener sulfuros económicos.', criteria:'Subdominios: SPP1 (alto Cu) y SPP2 (bajo Cu). Hábito dominante: masivo.', en:'Primary sulphide of pyrite.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'SSM', name:'Semimasivo', description:'Matriz de sulfuros 20–50%, incluye baritina. Puede presentar Py, Ccpy, Galn y minerales grises.', criteria:'Homologado como SSM para todo el catálogo. Hábitos: diseminado o vetado/venillas.', en:'Semimassive sulphide.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'VM', name:'Volcánico mineralizado', description:'Matriz de dacita con <20% de sulfuros, pero con minerales económicos >1% en leyes visuales.', criteria:'Subdominios: VM1 (Zn/Pb) y VM2 (Cu). Hábitos: diseminado, parches y venilleo.', en:'Volcanic mineralized rock.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'VD', name:'Volcánico dacítico / roca caja', description:'Roca volcánica de composición dacítica; puede ser afanítica, moteada, brechada, bandeada, porfidoblástica o granular.', criteria:'Usar para roca volcánica caja; el PGU la representa con la familia de color verde claro / enclave volcánico.', en:'Dacitic volcanic / host rock.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'ANDS', name:'Dique andesítico', description:'Dique andesítico post mineralización; plagioclasas, anfíboles y matriz cloritizada.', criteria:'Textura dominante: porfirídica.', en:'Porphyritic dike post mineralization.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'DIOR', name:'Dique diorítico / volcánico coherente', description:'Dique máfico a diorítico o volcánico coherente con plagioclasas, biotita y hornblenda; magnetismo de débil a moderado.', criteria:'Textura dominante: afanítica.', en:'Aphanitic dike pre mineralization.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'VTQZ', name:'Veta de cuarzo', description:'Veta de cuarzo con o sin sulfuros económicos.', criteria:'Registrar geometría, espesor, orientación y minerales asociados.', en:'Quartz vein.', photos:[], builtIn:true}
+  ],
+  textures:[
+    {id:uid(), codeNexa:'AFNT', name:'Afanítica', description:'Cristales no visibles a simple vista, generalmente <1 mm.', clues:'Textura principal del VD en PGU.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'PORF', name:'Porfirídica', description:'Fenocristales inmersos en una matriz más fina.', clues:'Común en VD y diques andesíticos.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'BAND', name:'Bandeada', description:'Minerales organizados en bandas paralelas.', clues:'Muy importante en SPB.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'MOTD', name:'Moteada', description:'Presencia de motas de biotita en matriz dacítica fina.', clues:'Registrar tamaño y distribución de motas.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'PRFB', name:'Porfidoblástica', description:'Cristales grandes inmersos en una matriz fina; puede reflejar metamorfismo o recristalización.', clues:'Registrar mineral principal del porfidoblasto.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'GRAN', name:'Granular', description:'Cristales visibles y generalmente equigranulares.', clues:'Frecuente en intrusivos.', photos:[], builtIn:true}
+  ],
+  alterations:[
+    {id:uid(), codeNexa:'SILI', name:'Silicificación', description:'Reemplazo parcial o total por sílice; aumenta la dureza y puede destruir la textura original.', intensity:'Débil (FRCA), moderada (MEDI), fuerte (FORT). Criterio corregido: fuerte cuando es ≥50%.', distribution:'Puntual, vetillas, diseminada o pervasiva.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'SERI', name:'Sericitización', description:'Presencia de sericita/muscovita; color claro blanquecino, textura suavizada.', intensity:'FRCA / MEDI / FORT.', distribution:'Puntual, halo, vetillas o pervasiva.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'CLOR', name:'Cloritización', description:'Alteración verdosa por clorita; puede asociarse a epidota y carbonatos.', intensity:'FRCA / MEDI / FORT.', distribution:'Parches, venillas o pervasiva.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'BIOT', name:'Biotización', description:'Desarrollo o incremento de biotita, común en texturas moteadas o porfidoblásticas.', intensity:'FRCA / MEDI / FORT.', distribution:'Motas, bordes, matriz o pervasiva.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'ANDA', name:'Andalucita', description:'Ensambles aluminosos descritos en las cajas, sobre todo en sectores proximales y roca encajonante.', intensity:'Registrar abundancia relativa.', distribution:'Puntual, agregados o pervasiva.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'ARGI-M', name:'Argílica intermedia', description:'Formación de arcillas con preservación parcial de texturas; puede incluir illita, esmectita, montmorillonita u otras arcillas intermedias.', intensity:'FRCA / MEDI / FORT.', distribution:'Parches, halos o pervasiva.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'ARGI-A', name:'Argílica avanzada', description:'Alteración fuerte a muy fuerte con destrucción marcada de texturas y desarrollo intenso de arcillas / sílice residual.', intensity:'FRCA / MEDI / FORT.', distribution:'Pervasiva, halos intensos o cuerpos.', photos:[], builtIn:true}
+  ],
+  minerals:[
+    {id:uid(), codeNexa:'PY', group:'Ganga / sulfuro', name:'Pirita', formula:'FeS₂', economicMetal:'Fe', percent:'', description:'Sulfuro dominante del yacimiento; registrar tamaño de grano, textura y asociación.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'SPHA', group:'Mena', name:'Esfalerita', formula:'ZnS', economicMetal:'Zn', percent:'67.1% Zn', description:'Mineral principal de zinc.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'CCPY', group:'Mena', name:'Calcopirita', formula:'CuFeS₂', economicMetal:'Cu', percent:'34.6% Cu', description:'Mineral principal de cobre primario.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'GALN', group:'Mena', name:'Galena', formula:'PbS', economicMetal:'Pb', percent:'86.6% Pb', description:'Mineral principal de plomo; puede portar plata.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'BARI', group:'Ganga', name:'Baritina', formula:'BaSO₄', economicMetal:'', percent:'', description:'Ganga importante en SPB.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'QZ', group:'Ganga', name:'Cuarzo', formula:'SiO₂', economicMetal:'', percent:'', description:'Relacionar con silicificación y vetillas.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'Cu-OX', group:'Óxidos', name:'Óxidos de cobre', formula:'Grupo', economicMetal:'Cu', percent:'Variable', description:'Grupo para registrar minerales como cuprita (Cu₂O), tenorita (CuO), etc.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'Cu-SULF', group:'Sulfatos', name:'Sulfatos de cobre', formula:'Grupo', economicMetal:'Cu', percent:'Variable', description:'Grupo para registrar minerales como calcantita (CuSO₄·5H₂O), brochantita, antlerita, etc.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'Cu-SEC', group:'Cobres secundarios', name:'Cobres secundarios', formula:'Grupo', economicMetal:'Cu', percent:'Variable', description:'Grupo para registrar calcosina, covelina, digenita y otros cobres secundarios.', photos:[], builtIn:true}
+  ],
+  abbrevs:[
+    {id:uid(), number:1, codeNexa:"SPB", descricao:"Sulfeto primário de barita", descripcion:"Sulfuro primario de baritina", description:"Primary baritic sulphide", photos:[], builtIn:true},
+    {id:uid(), number:2, codeNexa:"SPP", descricao:"Sulfeto primário de pirita", descripcion:"Sulfuro primario de pirita", description:"Primary pyritic sulphide", photos:[], builtIn:true},
+    {id:uid(), number:3, codeNexa:"SSM", descricao:"Semimaciço", descripcion:"Sulfuro semimasivo", description:"Semimassive sulphide", photos:[], builtIn:true},
+    {id:uid(), number:4, codeNexa:"VM", descricao:"Vulcânico mineralizado", descripcion:"Volcánico mineralizado", description:"Mineralized volcanic rock", photos:[], builtIn:true},
+    {id:uid(), number:5, codeNexa:"VD", descricao:"Vulcânico dacítico", descripcion:"Volcánico dacítico", description:"Dacitic volcanic rock", photos:[], builtIn:true},
+    {id:uid(), number:6, codeNexa:"ANDS", descricao:"Andesito", descripcion:"Andesita / dique andesítico", description:"Andesite / andesitic dike", photos:[], builtIn:true},
+    {id:uid(), number:7, codeNexa:"DIOR", descricao:"Diorito", descripcion:"Diorita / dique diorítico", description:"Diorite / dioritic dike", photos:[], builtIn:true},
+    {id:uid(), number:8, codeNexa:"VTQZ", descricao:"Veio de quartzo", descripcion:"Veta de cuarzo", description:"Quartz vein", photos:[], builtIn:true},
+    {id:uid(), number:9, codeNexa:"MASS", descricao:"Sulfeto maciço", descripcion:"Sulfuro masivo (clase general)", description:"Massive sulphide", photos:[], builtIn:true},
+    {id:uid(), number:10, codeNexa:"AFNT", descricao:"Afanítica", descripcion:"Textura afanítica", description:"Aphanitic texture", photos:[], builtIn:true},
+    {id:uid(), number:11, codeNexa:"PORF", descricao:"Porfirítica", descripcion:"Textura porfídica / porfirítica", description:"Porphyritic texture", photos:[], builtIn:true},
+    {id:uid(), number:12, codeNexa:"BAND", descricao:"Bandada", descripcion:"Textura bandeada", description:"Banded texture", photos:[], builtIn:true},
+    {id:uid(), number:13, codeNexa:"MOTD", descricao:"Mosqueada", descripcion:"Textura moteada", description:"Spotted texture", photos:[], builtIn:true},
+    {id:uid(), number:14, codeNexa:"PRFB", descricao:"Porfiroblástica", descripcion:"Textura porfidoblástica", description:"Porphyroblastic texture", photos:[], builtIn:true},
+    {id:uid(), number:15, codeNexa:"GRAN", descricao:"Granular", descripcion:"Textura granular", description:"Granular texture", photos:[], builtIn:true},
+    {id:uid(), number:16, codeNexa:"SILI", descricao:"Silicificação", descripcion:"Silicificación", description:"Silicification", photos:[], builtIn:true},
+    {id:uid(), number:17, codeNexa:"SERI", descricao:"Sericitização", descripcion:"Sericitización", description:"Sericitization", photos:[], builtIn:true},
+    {id:uid(), number:18, codeNexa:"CLOR", descricao:"Cloritização", descripcion:"Cloritización", description:"Chloritization", photos:[], builtIn:true},
+    {id:uid(), number:19, codeNexa:"BIOT", descricao:"Biotitização", descripcion:"Biotización", description:"Biotitization", photos:[], builtIn:true},
+    {id:uid(), number:20, codeNexa:"ANDA", descricao:"Andalusita", descripcion:"Andalucita / asociación alumínica", description:"Andalusite", photos:[], builtIn:true},
+    {id:uid(), number:21, codeNexa:"ARGI-M", descricao:"Alteração argílica intermediária", descripcion:"Alteración argílica intermedia", description:"Intermediate argillic alteration", photos:[], builtIn:true},
+    {id:uid(), number:22, codeNexa:"ARGI-A", descricao:"Alteração argílica avançada", descripcion:"Alteración argílica avanzada", description:"Advanced argillic alteration", photos:[], builtIn:true},
+    {id:uid(), number:23, codeNexa:"FRCA", descricao:"Fraca", descripcion:"Alteración débil", description:"Weak alteration", photos:[], builtIn:true},
+    {id:uid(), number:24, codeNexa:"MEDI", descricao:"Moderada", descripcion:"Alteración moderada", description:"Moderate alteration", photos:[], builtIn:true},
+    {id:uid(), number:25, codeNexa:"FORT", descricao:"Forte", descripcion:"Alteración fuerte (≥50 %)", description:"Strong alteration (≥50%)", photos:[], builtIn:true},
+    {id:uid(), number:26, codeNexa:"PY", descricao:"Pirita", descripcion:"Pirita, FeS₂", description:"Pyrite", photos:[], builtIn:true},
+    {id:uid(), number:27, codeNexa:"SPHA", descricao:"Esfalerita", descripcion:"Esfalerita, ZnS", description:"Sphalerite", photos:[], builtIn:true},
+    {id:uid(), number:28, codeNexa:"CCPY", descricao:"Calcopirita", descripcion:"Calcopirita, CuFeS₂", description:"Chalcopyrite", photos:[], builtIn:true},
+    {id:uid(), number:29, codeNexa:"GALN", descricao:"Galena", descripcion:"Galena, PbS", description:"Galena", photos:[], builtIn:true},
+    {id:uid(), number:30, codeNexa:"BARI", descricao:"Barita", descripcion:"Baritina, BaSO₄", description:"Barite", photos:[], builtIn:true},
+    {id:uid(), number:31, codeNexa:"QZ", descricao:"Quartzo", descripcion:"Cuarzo, SiO₂", description:"Quartz", photos:[], builtIn:true},
+    {id:uid(), number:32, codeNexa:"PO", descricao:"Pirrotita", descripcion:"Pirrotita, Fe₁₋ₓS", description:"Pyrrhotite", photos:[], builtIn:true},
+    {id:uid(), number:33, codeNexa:"Cu-OX", descricao:"Óxidos de cobre", descripcion:"Grupo de óxidos de cobre", description:"Copper oxides", photos:[], builtIn:true},
+    {id:uid(), number:34, codeNexa:"Cu-SULF", descricao:"Sulfatos de cobre", descripcion:"Grupo de sulfatos de cobre", description:"Copper sulfates", photos:[], builtIn:true},
+    {id:uid(), number:35, codeNexa:"Cu-SEC", descricao:"Cobre secundário", descripcion:"Grupo de cobres secundarios", description:"Secondary copper minerals", photos:[], builtIn:true}
+  ]
+};
+
+const HATCH_DATA = {
+  palette:[
+    {code:'SPB', name:'SPB', color:'#04A7F9', note:'Azul de la paleta PGU.'},
+    {code:'SPP', name:'SPP', color:'#FB0505', note:'Rojo de la paleta PGU.'},
+    {code:'SSM', name:'SSM', color:'#E65711', note:'Naranja de la paleta PGU.'},
+    {code:'VM', name:'VM', color:'#F6D269', note:'Amarillo de la paleta PGU.'},
+    {code:'VD', name:'VD / Enclave volcánico', color:'#AACB87', note:'Verde claro del PGU.'},
+    {code:'ANDS', name:'Dique andesítico', color:'#898B00', note:'Olivo del PGU.'},
+    {code:'DIOR', name:'Dique diorítico', color:'#0F6908', note:'Verde oscuro del PGU.'}
+  ],
+  oreHatch:[
+    {domain:'SPB', high:'Relleno azul sólido', highClass:'', highColor:'#04A7F9', low:'Rayado diagonal azul', lowClass:'diag-blue'},
+    {domain:'SPP', high:'Relleno rojo sólido', highClass:'', highColor:'#FB0505', low:'Rayado diagonal rojo', lowClass:'diag-red'}
+  ],
+  altHatch:[
+    {intensity:'Débil (FRCA)', symbol:'+ ', pattern:'Rayado simple', className:'alt-weak'},
+    {intensity:'Moderada (MEDI)', symbol:'++', pattern:'Trama cruzada', className:'alt-med'},
+    {intensity:'Fuerte (FORT)', symbol:'+++', pattern:'Relleno sólido gris', className:'alt-strong'}
+  ]
+};
+
+let state = clone(DEFAULT_DATA);
+let publishedPhotos = {};
+async function loadPublishedPhotos(){
+  try { const res = await fetch('assets/gallery.json', {cache:'no-store'}); if(!res.ok) return; publishedPhotos=await res.json(); renderAll(); } catch(e) {}
+}
+function getPhotos(section,item){return (publishedPhotos[section]?.[String(item.codeNexa||'').toUpperCase()]||[]);}
+let activePanel = 'domains';
+let currentPhotoContext = {section:null,id:null,index:0,zoom:1};
+
+function uid(){return 'id_' + Math.random().toString(36).slice(2,10) + Date.now().toString(36).slice(-4)}
+function clone(obj){return JSON.parse(JSON.stringify(obj))}
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return clone(DEFAULT_DATA);
+    const parsed = JSON.parse(raw);
+    return mergeWithDefaults(parsed);
+  }catch(e){
+    return clone(DEFAULT_DATA);
+  }
+}
+function mergeWithDefaults(saved){
+  const merged = clone(DEFAULT_DATA);
+  for(const key of ['domains','textures','alterations','minerals','abbrevs']){
+    if(Array.isArray(saved[key])) merged[key] = saved[key];
+  }
+  return merged;
+}
+function saveState(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+function hexToRGB(hex){const h=hex.replace('#','');return [0,2,4].map(i=>parseInt(h.slice(i,i+2),16)).join(', ')}
+function escapeHtml(v){return String(v ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function getSectionData(section){return state[section] || []}
+function setSectionData(section,data){state[section] = data; saveState(); renderAll()}
+function photoCount(item,section){return getPhotos(section,item).length}
+function searchMatch(text){
+  const q = document.getElementById('globalSearch').value.trim().toLowerCase();
+  if(!q) return true;
+  return String(text).toLowerCase().includes(q);
+}
+function inActiveSearch(item,keys){
+  if(!document.getElementById('globalSearch').value.trim()) return true;
+  return keys.some(k => searchMatch(item[k] || ''));
+}
+
+function renderTabs(){
+  const el = document.getElementById('tabs');
+  el.innerHTML = TABS.map(t => `
+    <button class="tab ${activePanel===t.id?'active':''}" data-panel="${t.id}">
+      <span class="tabnum">${t.num}</span>
+      <span>${t.label}</span>
+    </button>
+  `).join('');
+  el.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>showPanel(btn.dataset.panel)));
+}
+function showPanel(id){
+  activePanel = id;
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active', p.id === 'panel-'+id));
+  renderTabs();
+}
+
+function rowActionButtons(section,item){
+  return `<div class="row-actions"><button class="btn soft" data-open-photos="${section}|${item.id}" title="Ver galería fotográfica">Ver fotos</button></div>`;
+}
+function photoCell(item,section){
+  return `<span class="photo-pill">📷 ${photoCount(item,section)}</span>`;
+}
+
+function renderDomains(){
+  const list = getSectionData('domains').filter(item=>inActiveSearch(item,['codeNexa','name','description','criteria','en']));
+  const panel = document.getElementById('panel-domains');
+  panel.innerHTML = `
+    <div class="section-actions">
+      <div>
+        <h2>Dominios / litología</h2>
+        <p class="sub">Clasificación de dominios y litologías.</p>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Código NEXA</th><th>Nombre</th><th>Descripción</th><th>Criterio / notas</th><th>Description</th><th>Fotos</th><th>Galería</th></tr></thead>
+        <tbody>
+          ${list.length ? list.map(item => `
+            <tr>
+              <td><span class="code">${escapeHtml(item.codeNexa)}</span>${item.builtIn?'':' <span class="badge user">Nuevo</span>'}</td>
+              <td><b>${escapeHtml(item.name)}</b></td>
+              <td>${escapeHtml(item.description)}</td>
+              <td>${escapeHtml(item.criteria || '')}</td>
+              <td>${escapeHtml(item.en || '')}</td>
+              <td>${photoCell(item,'domains')}</td>
+              <td>${rowActionButtons('domains',item)}</td>
+            </tr>`).join('') : `<tr><td colspan="7" class="empty">No hay coincidencias en esta sección.</td></tr>`}
+        </tbody>
+      </table>
+    </div>
+    <div class="footer-note"></div>
+  `;
+}
+
+function renderTextures(){
+  const list = getSectionData('textures').filter(item=>inActiveSearch(item,['codeNexa','name','description','clues']));
+  const panel = document.getElementById('panel-textures');
+  panel.innerHTML = `
+    <div class="section-actions">
+      <div>
+        <h2>Texturas</h2>
+        <p class="sub">Clasificación y criterios de reconocimiento de texturas.</p>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Código NEXA</th><th>Textura</th><th>Descripción</th><th>Pistas de reconocimiento</th><th>Fotos</th><th>Galería</th></tr></thead>
+        <tbody>
+          ${list.length ? list.map(item => `
+            <tr>
+              <td><span class="code">${escapeHtml(item.codeNexa)}</span>${item.builtIn?'':' <span class="badge user">Nueva</span>'}</td>
+              <td><b>${escapeHtml(item.name)}</b></td>
+              <td>${escapeHtml(item.description)}</td>
+              <td>${escapeHtml(item.clues || '')}</td>
+              <td>${photoCell(item,'textures')}</td>
+              <td>${rowActionButtons('textures',item)}</td>
+            </tr>`).join('') : `<tr><td colspan="6" class="empty">No hay coincidencias en esta sección.</td></tr>`}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderAlterations(){
+  const list = getSectionData('alterations').filter(item=>inActiveSearch(item,['codeNexa','name','description','intensity','distribution']));
+  const panel = document.getElementById('panel-alterations');
+  panel.innerHTML = `
+    <div class="section-actions">
+      <div>
+        <h2>Alteración</h2>
+        <p class="sub">Tipos de alteración, intensidad y distribución.</p>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Código NEXA</th><th>Alteración</th><th>Descripción</th><th>Intensidad</th><th>Distribución</th><th>Fotos</th><th>Galería</th></tr></thead>
+        <tbody>
+          ${list.length ? list.map(item => `
+            <tr>
+              <td><span class="code">${escapeHtml(item.codeNexa)}</span>${item.builtIn?'':' <span class="badge user">Nueva</span>'}</td>
+              <td><b>${escapeHtml(item.name)}</b></td>
+              <td>${escapeHtml(item.description)}</td>
+              <td>${escapeHtml(item.intensity || '')}</td>
+              <td>${escapeHtml(item.distribution || '')}</td>
+              <td>${photoCell(item,'alterations')}</td>
+              <td>${rowActionButtons('alterations',item)}</td>
+            </tr>`).join('') : `<tr><td colspan="7" class="empty">No hay coincidencias en esta sección.</td></tr>`}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderMinerals(){
+  const list = getSectionData('minerals').filter(item=>inActiveSearch(item,['codeNexa','group','name','formula','economicMetal','percent','description']));
+  const panel = document.getElementById('panel-minerals');
+  panel.innerHTML = `
+    <div class="section-actions">
+      <div>
+        <h2>Mineralización</h2>
+        <p class="sub">Minerales, grupos, fórmulas químicas y contenido teórico del metal económico.</p>
+      </div>
+    </div>
+    <div class="helper-grid">
+      <div class="helper"><b>Óxidos</b>Ej.: cuprita, tenorita, tujita.</div>
+      <div class="helper"><b>Sulfatos</b>Ej.: calcantita, brochantita, melanterita</div>
+      <div class="helper"><b>Cobres secundarios</b>Ej.: calcosina, covelina.</div>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Código NEXA</th><th>Grupo</th><th>Mineral / grupo</th><th>Fórmula</th><th>Metal económico</th><th>% metal económico</th><th>Descripción</th><th>Fotos</th><th>Galería</th></tr></thead>
+        <tbody>
+          ${list.length ? list.map(item => `
+            <tr>
+              <td><span class="code">${escapeHtml(item.codeNexa)}</span>${item.builtIn?'':' <span class="badge user">Nuevo</span>'}</td>
+              <td>${escapeHtml(item.group || '')}</td>
+              <td><b>${escapeHtml(item.name)}</b></td>
+              <td>${escapeHtml(item.formula || '')}</td>
+              <td>${escapeHtml(item.economicMetal || '')}</td>
+              <td>${escapeHtml(item.percent || '')}</td>
+              <td>${escapeHtml(item.description || '')}</td>
+              <td>${photoCell(item,'minerals')}</td>
+              <td>${rowActionButtons('minerals',item)}</td>
+            </tr>`).join('') : `<tr><td colspan="9" class="empty">No hay coincidencias en esta sección.</td></tr>`}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderColors(){
+  const panel = document.getElementById('panel-colors');
+  panel.innerHTML = `
+    <div class="section-actions">
+      <div>
+        <h2>Colores y hatch</h2>
+        <p class="sub">Paleta de dominios, tramas y simbología de intensidad.</p>
+      </div>
+    </div>
+    <div class="notice"><b>Paleta usada:</b> basada en la tabla interna de clasificación de dominios y en las tablas de hatch del PGU. En intensidad fuerte se adopta <b>≥50%</b>.</div>
+    <h3>Paleta de dominios</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Código</th><th>Dominio</th><th>Color</th><th>RGB</th><th>Observación</th></tr></thead>
+        <tbody>
+          ${HATCH_DATA.palette.map(x => `
+            <tr>
+              <td><span class="code">${x.code}</span></td>
+              <td>${x.name}</td>
+              <td><span class="swatch" style="background:${x.color}"></span></td>
+              <td>${hexToRGB(x.color)}</td>
+              <td>${x.note}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+    <h3 style="margin-top:16px">Hatch para dominios con leyes</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Dominio</th><th>Alta ley</th><th>Representación</th><th>Baja ley</th><th>Representación</th></tr></thead>
+        <tbody>
+          ${HATCH_DATA.oreHatch.map(x => `
+            <tr>
+              <td><span class="code">${x.domain}</span></td>
+              <td>${x.high}</td>
+              <td>${x.highClass ? `<span class="pattern ${x.highClass}"></span>` : `<span class="swatch" style="background:${x.highColor};width:96px;height:34px"></span>`}</td>
+              <td>${x.low}</td>
+              <td><span class="pattern ${x.lowClass}"></span></td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+    <h3 style="margin-top:16px">Hatch para intensidad de alteraciones</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Intensidad</th><th>Simbología</th><th>Hash / textura</th><th>Representación</th></tr></thead>
+        <tbody>
+          ${HATCH_DATA.altHatch.map(x => `
+            <tr>
+              <td>${x.intensity}</td>
+              <td><span class="code">${x.symbol}</span></td>
+              <td>${x.pattern}</td>
+              <td><span class="pattern ${x.className}"></span></td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+    <div class="footer-note">Referencia PGU: SPB azul, SPP rojo, SSM naranja, VM amarillo, VD/enclave verde claro, dique andesítico olivo y dique diorítico verde oscuro.</div>
+  `;
+}
+
+function renderAbbrevs(){
+  const list = getSectionData('abbrevs').filter(item=>inActiveSearch(item,['number','codeNexa','descricao','descripcion','description']));
+  const panel = document.getElementById('panel-abbrevs');
+  panel.innerHTML = `
+    <div class="section-actions">
+      <div>
+        <h2>Abreviaturas</h2>
+        <p class="sub">Códigos y descripciones homologadas.</p>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>N°</th><th>CODE Nexa</th><th>Descrição</th><th>Descripción</th><th>Description</th><th>Fotos</th><th>Galería</th></tr></thead>
+        <tbody>
+          ${list.length ? list.map(item => `
+            <tr>
+              <td>${escapeHtml(item.number ?? '')}</td>
+              <td><span class="code">${escapeHtml(item.codeNexa)}</span>${item.builtIn?'':' <span class="badge user">Nuevo</span>'}</td>
+              <td>${escapeHtml(item.descricao || '')}</td>
+              <td>${escapeHtml(item.descripcion || '')}</td>
+              <td>${escapeHtml(item.description || '')}</td>
+              <td>${photoCell(item,'abbrevs')}</td>
+              <td>${rowActionButtons('abbrevs',item)}</td>
+            </tr>`).join('') : `<tr><td colspan="7" class="empty">No hay coincidencias en esta sección.</td></tr>`}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function bindDynamicEvents(){
+  document.querySelectorAll('[data-open-photos]').forEach(btn=>btn.onclick=()=>openPhotoModal(...btn.dataset.openPhotos.split('|')));
+}
+
+function openPhotoModal(section,id){
+  const item = getSectionData(section).find(x=>x.id===id);
+  if(!item) return;
+  currentPhotoContext = {section,id,index:0,zoom:1};
+  document.getElementById('photoModalTitle').textContent = `${item.codeNexa || ''} · ${item.name || item.descricao || 'Galería'}`;
+  document.getElementById('modalMeta').textContent = `Sección: ${section}. Usa las flechas para revisar las fotos del ítem.`;
+  document.getElementById('photoModalShell').classList.add('open');
+  updatePhotoModal();
+}
+function closePhotoModal(){document.getElementById('photoModalShell').classList.remove('open')}
+function updatePhotoModal(){
+  const item = getSectionData(currentPhotoContext.section).find(x=>x.id===currentPhotoContext.id);
+  const photos = item ? getPhotos(currentPhotoContext.section,item) : [];
+  const img = document.getElementById('modalImage');
+  const empty = document.getElementById('modalEmpty');
+  const counter = document.getElementById('photoCounter');
+  const prev = document.getElementById('prevPhoto');
+  const next = document.getElementById('nextPhoto');
+  if(!photos.length){
+    img.classList.add('hide');
+    empty.classList.remove('hide');
+    prev.classList.add('hide'); next.classList.add('hide');
+    counter.textContent = '0 / 0';
+    return;
+  }
+  if(currentPhotoContext.index >= photos.length) currentPhotoContext.index = photos.length - 1;
+  if(currentPhotoContext.index < 0) currentPhotoContext.index = 0;
+  img.src = photos[currentPhotoContext.index];
+  img.style.transform = `scale(${currentPhotoContext.zoom})`;
+  img.classList.remove('hide');
+  empty.classList.add('hide');
+  prev.classList.toggle('hide', photos.length < 2);
+  next.classList.toggle('hide', photos.length < 2);
+  counter.textContent = `${currentPhotoContext.index + 1} / ${photos.length}`;
+}
+
+function renderAll(){
+  renderTabs();
+  renderDomains();
+  renderTextures();
+  renderAlterations();
+  renderMinerals();
+  renderColors();
+  renderAbbrevs();
+  bindDynamicEvents();
+  showPanel(activePanel);
+}
+
+renderAll();
+loadPublishedPhotos();
+
+document.getElementById('globalSearch').addEventListener('input', renderAll);
+document.getElementById('clearSearch').addEventListener('click', ()=>{document.getElementById('globalSearch').value=''; renderAll();});
+document.getElementById('closePhotoModal').addEventListener('click', closePhotoModal);
+document.getElementById('prevPhoto').addEventListener('click', ()=>{currentPhotoContext.index--; currentPhotoContext.zoom=1; updatePhotoModal();});
+document.getElementById('nextPhoto').addEventListener('click', ()=>{currentPhotoContext.index++; currentPhotoContext.zoom=1; updatePhotoModal();});
+document.getElementById('zoomIn').addEventListener('click', ()=>{currentPhotoContext.zoom=Math.min(5, currentPhotoContext.zoom+0.2); updatePhotoModal();});
+document.getElementById('zoomOut').addEventListener('click', ()=>{currentPhotoContext.zoom=Math.max(0.4, currentPhotoContext.zoom-0.2); updatePhotoModal();});
+document.getElementById('zoomReset').addEventListener('click', ()=>{currentPhotoContext.zoom=1; updatePhotoModal();});
+document.addEventListener('keydown', (e)=>{
+  if(!document.getElementById('photoModalShell').classList.contains('open')) return;
+  if(e.key==='ArrowRight'){currentPhotoContext.index++; currentPhotoContext.zoom=1; updatePhotoModal();}
+  if(e.key==='ArrowLeft'){currentPhotoContext.index--; currentPhotoContext.zoom=1; updatePhotoModal();}
+  if(e.key==='+'){currentPhotoContext.zoom=Math.min(5,currentPhotoContext.zoom+0.2); updatePhotoModal();}
+  if(e.key==='-'){currentPhotoContext.zoom=Math.max(0.4,currentPhotoContext.zoom-0.2); updatePhotoModal();}
+  if(e.key==='Escape'){closePhotoModal();}
+});
+
+</script>
+</body>
+</html>
