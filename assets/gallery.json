@@ -1,1 +1,115 @@
-{}
+{
+  "alterations": {
+    "ANDA": [
+      "assets/images/alterations/ANDA/ANDA.png"
+    ],
+    "ARGI-M": [
+      "assets/images/alterations/ARGI-M/Argilica.jpg"
+    ],
+    "BIOT": [
+      "assets/images/alterations/BIOT/BIOT.png"
+    ],
+    "CLOR": [
+      "assets/images/alterations/CLOR/CLOR.png"
+    ],
+    "SERI": [
+      "assets/images/alterations/SERI/SERI.png"
+    ],
+    "SILI": [
+      "assets/images/alterations/SILI/SILI.png"
+    ]
+  },
+  "domains": {
+    "ANDS": [
+      "assets/images/domains/ANDS/ANDS.png",
+      "assets/images/domains/ANDS/ANDS_2.png"
+    ],
+    "DIOR": [
+      "assets/images/domains/DIOR/DIOR.png"
+    ],
+    "SPB": [
+      "assets/images/domains/SPB/SPB.png"
+    ],
+    "SPP": [
+      "assets/images/domains/SPP/SPP.png"
+    ],
+    "SSM": [
+      "assets/images/domains/SSM/SSM.png"
+    ],
+    "VD": [
+      "assets/images/domains/VD/VD.jpg"
+    ],
+    "VM": [
+      "assets/images/domains/VM/VM.png"
+    ],
+    "VTQZ": [
+      "assets/images/domains/VTQZ/VTQZ.jpg"
+    ]
+  },
+  "minerals": {
+    "BARI": [
+      "assets/images/minerals/BARI/Baritina.jpg"
+    ],
+    "CCPY": [
+      "assets/images/minerals/CCPY/Calcopirita.jpg"
+    ],
+    "CU-OX": [
+      "assets/images/minerals/CU-OX/Oxidos%20de%20Cu.jpg"
+    ],
+    "CU-SEC": [
+      "assets/images/minerals/CU-SEC/Covelina.jpg"
+    ],
+    "CU-SULF": [
+      "assets/images/minerals/CU-SULF/M_0015_1.jpeg"
+    ],
+    "GALN": [
+      "assets/images/minerals/GALN/Galena.jpg"
+    ],
+    "PY": [
+      "assets/images/minerals/PY/Pirita.jpg"
+    ],
+    "QZ": [
+      "assets/images/minerals/QZ/Qzo.jpg"
+    ],
+    "SPHA": [
+      "assets/images/minerals/SPHA/Esfalerita.jpg"
+    ]
+  },
+  "textures": {
+    "AFNT": [
+      "assets/images/textures/AFNT/AFNT.jpg"
+    ],
+    "BAND": [
+      "assets/images/textures/BAND/Bandeada.jpg"
+    ],
+    "DISEMINADO": [
+      "assets/images/textures/DISEMINADO/Diseminado.png",
+      "assets/images/textures/DISEMINADO/Intersticial.png"
+    ],
+    "GRAN": [
+      "assets/images/textures/GRAN/Granular.png"
+    ],
+    "MASIVO": [
+      "assets/images/textures/MASIVO/Masivo.jpg"
+    ],
+    "MOTD": [
+      "assets/images/textures/MOTD/Moteada.jpg",
+      "assets/images/textures/MOTD/Moteado.png"
+    ],
+    "PARCHES": [
+      "assets/images/textures/PARCHES/Parches.png"
+    ],
+    "PATINA": [
+      "assets/images/textures/PATINA/Patinas.webp"
+    ],
+    "PORF": [
+      "assets/images/textures/PORF/Porfidica.png"
+    ],
+    "PRFB": [
+      "assets/images/textures/PRFB/Porfiroblastica.jpg"
+    ],
+    "VETILLAS": [
+      "assets/images/textures/VETILLAS/Vetillas.png"
+    ]
+  }
+}
