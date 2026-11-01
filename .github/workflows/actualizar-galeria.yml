@@ -1,0 +1,35 @@
+name: Actualizar catálogo fotográfico
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/images/**'
+      - 'update_gallery.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar-galeria:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Crear índice de fotografías
+        run: python3 update_gallery.py
+      - name: Guardar índice actualizado
+        shell: bash
+        run: |
+          if ! git diff --quiet -- assets/gallery.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/gallery.json
+            git commit -m "Actualizar índice fotográfico automáticamente"
+            git push
+          else
+            echo "El índice ya está actualizado."
+          fi
