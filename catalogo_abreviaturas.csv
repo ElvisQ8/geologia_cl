@@ -1,0 +1,208 @@
+﻿N°,CODE Nexa,Descrição,Descripción,Description
+1,ACTN,actinolita,actinolita,actinolite
+2,ADUL,adulária,adularia,adularia
+3,AGAT,ágata,ágata,agate
+4,ALAB,alabandita,alabandita,alabandite
+5,ALAN,alanita,alanita,alanita
+6,ALBT,albita,albita,albite
+7,ALMD,almandina,almandina,almandine
+8,AMET,ametista,amatista,amethyst
+9,AMZN,amazonita,amazonita,amazonite
+10,ANDE,andesina,andesina,andesina
+11,ANDT,andradita,andradita,andradite
+12,ANDZ,andalusita,andalucita,andalusite
+13,ANFB,anfibólio,anfíbol,amphibole
+14,ANIT,anidrita,anidrita,anhydrite
+15,ANKE,ankerita,ankerita,ankerite
+16,ANTF,antofilita,antofilita,anthophyllite
+17,ANTG,antigorita,antigorita,antigorite
+18,ANTT,anortita,anortita,anortita
+19,APAT,apatita,apatito,apatite
+20,ARAG,aragonita,aragonito,aragonite
+21,ARGE,argentita,argentita,argentita
+22,ARGL,argilominerais,minerales de arcilla,clay minerals
+23,ARSP,arsenopirita,arsenopirita,arsenopyrite
+24,ASBL,asbolano,asbolana,asbolane
+25,ASBS,asbesto,amianto,asbestos
+26,ATCM,atacamita,atacamita,atacamite
+27,AUGI,augita,augita,augita
+28,AZUR,azurita,azurita,azurite
+29,BARI,barita,baritina,barite
+30,BAUX,bauxita,bauxita,bauxite
+31,BERI,berilo,berilo,beryl
+32,BIOT,biotita,biotita,biotite
+33,BLEN,blenda,blenda,blende
+34,BORN,bornita,bornita,bornite
+35,BRCT,brochantita,brochantita,brochantite
+36,CALA,calamina,calamina,calamine
+37,CALC,calcita,calcita,calcite
+38,CAOL,caolinita,caolinita,kaolinite
+39,CARB,carbonato,carbonato,carbonate
+40,CARV,carvão,carbón,charcoal
+41,CAST,cassiterita,casiterita,cassiterite
+42,CCCT,calcocita,calcosina,chalcocite
+43,CCPY,calcopirita,calcopirita,chalcopyrite
+44,CCTT,calcantita,calcantita,chalcanthite
+45,CERS,cerussita,cerussite,cerussite
+46,CHRT,chert,sílex,chert
+47,CIAN,cianita,cianita,kyanite
+48,CINA,cinabrio,cinabrio,cinnabar
+49,CITR,citrino,citrinita,citrine
+50,CLIM,caulim,caolín,kaolin
+51,CLMB,columbita,columbita,columbite
+52,CLOR,clorita,clorito,chlorite
+53,COBL,cobalta,cobalita,cobalta
+54,COBR,cobre,cobre,copper
+55,COBT,cobaltita,cobaltita,cobaltite
+56,CORD,cordierita,cordierita,cordierite
+57,CORI,córindon,corundo,corundum
+58,COVE,covelita,covellina,covellite
+59,CRCL,crisocola,crisocola,chrysocolla
+60,CRIS,cristal de rocha,diamante artificial,Rhinestone
+61,CROM,cromita,cromita,chromite
+62,CRTD,cloritóide,cloritoide,chloritoid
+63,CRTL,crisotila,crisotilo,chrysotile
+64,CUPR,cuprita,cuprita,cuprite
+65,DCZT,descloizita,descloizita,descloizite
+66,DIAM,diamante,diamante,diamond
+67,DIGE,digenita,digenita,digenite
+68,DIOP,diopsídio,diópsido,diopside
+69,DOLO,dolomita,dolomita,dolomite
+70,ENAR,enargita,enargita,enargite
+71,ENST,enstatita,enstatite,enstatite
+72,EPID,epidoto,peridoto,peridot
+73,ESCA,escapolita,scapolite,scapolite
+74,ESPC,especularita,especularita,specularite
+75,ESTE,esteatita,esteatita,steatite
+76,ESTI,estibinita,estibinita,estibinite
+77,ESTU,estaurolita,estaurolita,estaurolite
+78,FENG,fengita,fengita,phengite
+79,FERR,ferro,hierro,iron
+80,FLDP,feldspato,feldespato,feldspar
+81,FLOG,flogopita,flogopita,flogopite
+82,FUCS,fucsita,fucsita,fucsita
+83,GALN,galena,galena,galena
+84,GARN,garnierita,garnerite,garnerite
+85,GIBB,gibbsita,gibbsita,gibbsita
+86,GIPS,gesso,yeso,gipsum
+87,GOET,goethita,goethita,goethite
+88,GRAF,grafita,grafito,graphite
+89,GRAN,granada,granate,garnet
+90,GROS,grossularia,grosularia,grossular
+91,GRUN,grunerita,grunerita,grunerita
+92,HALT,halita,halita,halite
+93,HEMA,hematita,hematites,hematite
+94,HIPE,hiperstênio,hiperstena,hypersthene
+95,HORN,hornblenda,hornblenda,hornblende
+96,HRZT,harztingsita,hastingsita,hastingsite
+97,ILME,ilmenita,ilmenita,ilmenite
+98,JASP,jaspe,jaspe,jasper
+99,KFLD,k-feldspato,feldespato potásico,K-feldspar
+100,LEPD,lepidolita,lepidolite,lepidolite
+101,LIMO,limonita,limonita,limonite
+102,LZUL,lazulita,lazulita,lazulita
+103,LZUR,lazurita,lapis lázuri,lapis lazuli
+104,MAGN,magnesita,magnesita,magnesite
+105,MAGT,magnetita,magnetita,magnetite
+106,MALQ,malaquita,malaquita,malachite
+107,MARC,marcassita,marcasita,marcasite
+108,MARM,marmatita,marmatita,marmatite
+109,MART,martita,martita,martite
+110,MICA,mica,mica,mica
+111,MICR,microclina,microclino,microcline
+112,MILE,milerita,millerita,millerite
+113,MNGN,manganita,manganite,manganite
+114,MNGS,manganês,manganeso,manganese
+115,MOLI,molibdenita,molibdenito,molybdenite
+116,MONT,montmorilonita,montmorillonita,montmorillonite
+117,MONZ,monazita,monacita,monazite
+118,MRLT,marialita,marialita,marialite
+119,MTMT,motramita,motramita,mottramite
+120,MUSC,muscovita,moscovita,muscovite
+121,NAFD,Na-feldspato,Na-feldespato,Na-feldspar
+122,NEFE,nefelina,nefelina,nepheline
+123,NEOT,neotocita,neotocita,neotocite
+124,NICO,nicolita,nicolita,nicolite
+125,OLIV,olivina,olivino,olivine
+126,OPAL,opala,ópalo,opal
+127,OXFE,óxidos Fe,óxidos Fe,iron oxides
+128,OXPB,óxidos Pb,óxidos Pb,Pb oxides
+129,OXZN,óxidos Zn,óxidos Zn,Zn oxides
+130,PIRR,pirrotita,pirrotita,pyrrhotite
+131,PIRX,piroxênio,piroxeno,pyroxene
+132,PLAG,plagioclásio,plagioclasa,plagioclase
+133,PLBS,polibasita,polibasita,polibasite
+134,PNTL,pentlandita,pentlandita,pentlandite
+135,PRAS,prásio,prase,prase
+136,PRFL,pirofilita,pirofilita,pyrophyllite
+137,PRLU,pirolusita,pirolusita,pyrolusite
+138,PRMF,piromorfita,piromorfita,pyromorphite
+139,PRST,proustita,proustita,proustite
+140,PSIL,psilomelana,psilomelana,psilomelana
+141,PY,pirita,pirita,pyrite
+142,QTZO,quartzo,cuarzo,quartz
+143,RODC,rodocrosita,rodocrosita,rhodochrosite
+144,RODN,rodonita,rodonite,rodonite
+145,RUTI,rutilo,rutilo,rutile
+146,SCHE,scheelita,scheelita,scheelite
+147,SERI,sericita,sericita,sericite
+148,SERP,serpentina,serpentina,serpentine
+149,SIDR,siderita,siderita,siderite
+150,SILI,silica,sílice,silica
+151,SILL,sillimanita,silimanita,sillimanite
+152,SILX,sílex,pedernal,flint
+153,SODA,sodalita,sodalita,sodalite
+154,SPHA,esfalerita,esfalerita,sphalerite
+155,SUCU,sulfeto cobre,sulfuro de cobre,sulfide copper
+156,SUFE,sulfeto ferro,sulfuro de hierro,iron sulfide
+157,SULF,sulfeto,sulfuro,sulfide
+158,SUNI,sulfeto níquel,sulfuro de níquel,nickel sulfide
+159,SUZN,sulfeto zinco,sulfuro de zinc,zinc sulfide
+160,TALC,talco,talco,talc
+161,TANT,tantalita,tantalita,tantalite
+162,TITA,titanita,titanite,titanite
+163,TNTT,tenantita,tennantita,tennantite
+164,TOPZ,topázio,topacio,topaz
+165,TREM,tremolita,tremolita,tremolite
+166,TTRD,tetrahedita,tetrahedita,tetrahedite
+167,TURM,turmalina,turmalina,tourmaline
+168,TURQ,turquesa,turquesa,turquoise
+169,VANA,vanadinita,vanadinita,vanadinita
+170,VERM,vermiculita,vermiculita,vermiculite
+171,VIOL,violarita,violarita,violarite
+172,WILA,wilanita,wilanita,wilanite
+173,WILL,willemita,willemita,willemite
+174,WOLF,wolframita,wolframita,wolframite
+175,WOLS,wolastonita,wollastonita,wollastonite
+176,ZINC,zincita,zincita,zincite
+177,ZIRC,zircão,circón,zircon
+178,SPB,Sulfeto primário de barita,Sulfuro primario de baritina,Primary baritic sulphide
+179,SPP,Sulfeto primário de pirita,Sulfuro primario de pirita,Primary pyritic sulphide
+180,SSM,Semimaciço,Sulfuro semimasivo,Semimassive sulphide
+181,VM,Vulcânico mineralizado,Volcánico mineralizado,Mineralized volcanic rock
+182,VD,Vulcânico dacítico,Volcánico dacítico,Dacitic volcanic rock
+183,ANDS,Andesito,Andesita / dique andesítico,Andesite / andesitic dike
+184,DIOR,Diorito,Diorita / dique diorítico,Diorite / dioritic dike
+185,VTQZ,Veio de quartzo,Veta de cuarzo,Quartz vein
+186,MASS,Sulfeto maciço,Sulfuro masivo (clase general),Massive sulphide
+187,AFNT,Afanítica,Textura afanítica,Aphanitic texture
+188,PORF,Porfirítica,Textura porfídica / porfirítica,Porphyritic texture
+189,BAND,Bandada,Textura bandeada,Banded texture
+190,MOTD,Mosqueada,Textura moteada,Spotted texture
+191,PRFB,Porfiroblástica,Textura porfidoblástica,Porphyroblastic texture
+192,ANDA,Andalusita,Andalucita / asociación alumínica,Andalusite
+193,ARGI-M,Alteração argílica intermediária,Alteración argílica intermedia,Intermediate argillic alteration
+194,ARGI-A,Alteração argílica avançada,Alteración argílica avanzada,Advanced argillic alteration
+195,FRCA,Fraca,Alteración débil,Weak alteration
+196,MEDI,Moderada,Alteración moderada,Moderate alteration
+197,FORT,Forte,Alteración fuerte (≥50 %),Strong alteration (≥50%)
+198,QZ,Quartzo,"Cuarzo, SiO₂",Quartz
+199,PO,Pirrotita,"Pirrotita, Fe₁₋ₓS",Pyrrhotite
+200,CU-OX,Óxidos de cobre,Grupo de óxidos de cobre,Copper oxides
+201,CU-SULF,Sulfatos de cobre,Grupo de sulfatos de cobre,Copper sulfates
+202,CU-SEC,Cobre secundário,Grupo de cobres secundarios,Secondary copper minerals
+203,MASIVO,Maciço,Masivo,Massive
+204,DISEMINADO,Disseminado,Diseminado,Disseminated
+205,PARCHES,Manchas / agregados,Parches,Patches
+206,VETILLAS,Vênulas,Vetillas,Veinlets
+207,PATINA,Pátina,Pátina,Coating / patina
