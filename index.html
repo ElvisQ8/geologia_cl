@@ -197,7 +197,12 @@ const DEFAULT_DATA = {
     {id:uid(), codeNexa:'BAND', name:'Bandeada', description:'Minerales organizados en bandas paralelas.', clues:'Muy importante en SPB.', photos:[], builtIn:true},
     {id:uid(), codeNexa:'MOTD', name:'Moteada', description:'Presencia de motas de biotita en matriz dacítica fina.', clues:'Registrar tamaño y distribución de motas.', photos:[], builtIn:true},
     {id:uid(), codeNexa:'PRFB', name:'Porfidoblástica', description:'Cristales grandes inmersos en una matriz fina; puede reflejar metamorfismo o recristalización.', clues:'Registrar mineral principal del porfidoblasto.', photos:[], builtIn:true},
-    {id:uid(), codeNexa:'GRAN', name:'Granular', description:'Cristales visibles y generalmente equigranulares.', clues:'Frecuente en intrusivos.', photos:[], builtIn:true}
+    {id:uid(), codeNexa:'GRAN', name:'Granular', description:'Cristales visibles y generalmente equigranulares.', clues:'Frecuente en intrusivos.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'MASIVO', name:'Masivo', description:'Material mineralizado compacto o continuo, sin organización dominante en bandas o venillas.', clues:'Registrar homogeneidad, tamaño de grano y asociación mineral.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'DISEMINADO', name:'Diseminado', description:'Granos o agregados minerales dispersos en la matriz de roca.', clues:'Registrar abundancia visual y uniformidad de distribución.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'PARCHES', name:'Parches', description:'Concentraciones irregulares y localizadas de minerales dentro de la roca.', clues:'Registrar dimensión, distribución y mineral predominante.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'VETILLAS', name:'Vetillas', description:'Minerales distribuidos en vetillas o venillas que cortan o reemplazan parcialmente la matriz.', clues:'Registrar potencia, densidad, orientación y relleno mineral.', photos:[], builtIn:true},
+    {id:uid(), codeNexa:'PATINA', name:'Pátina', description:'Recubrimiento superficial delgado sobre la roca o minerales, común en superficies de fractura u oxidación.', clues:'Distinguir pátina superficial de mineralización interna y registrar color / extensión.', photos:[], builtIn:true}
   ],
   alterations:[
     {id:uid(), codeNexa:'SILI', name:'Silicificación', description:'Reemplazo parcial o total por sílice; aumenta la dureza y puede destruir la textura original.', intensity:'Débil (FRCA), moderada (MEDI), fuerte (FORT). Criterio corregido: fuerte cuando es ≥50%.', distribution:'Puntual, vetillas, diseminada o pervasiva.', photos:[], builtIn:true},
@@ -254,7 +259,12 @@ const DEFAULT_DATA = {
     {id:uid(), number:32, codeNexa:"PO", descricao:"Pirrotita", descripcion:"Pirrotita, Fe₁₋ₓS", description:"Pyrrhotite", photos:[], builtIn:true},
     {id:uid(), number:33, codeNexa:"Cu-OX", descricao:"Óxidos de cobre", descripcion:"Grupo de óxidos de cobre", description:"Copper oxides", photos:[], builtIn:true},
     {id:uid(), number:34, codeNexa:"Cu-SULF", descricao:"Sulfatos de cobre", descripcion:"Grupo de sulfatos de cobre", description:"Copper sulfates", photos:[], builtIn:true},
-    {id:uid(), number:35, codeNexa:"Cu-SEC", descricao:"Cobre secundário", descripcion:"Grupo de cobres secundarios", description:"Secondary copper minerals", photos:[], builtIn:true}
+    {id:uid(), number:35, codeNexa:"Cu-SEC", descricao:"Cobre secundário", descripcion:"Grupo de cobres secundarios", description:"Secondary copper minerals", photos:[], builtIn:true},
+    {id:uid(), number:36, codeNexa:'MASIVO', descricao:'Maciço', descripcion:'Masivo', description:'Massive', photos:[], builtIn:true},
+    {id:uid(), number:37, codeNexa:'DISEMINADO', descricao:'Disseminado', descripcion:'Diseminado', description:'Disseminated', photos:[], builtIn:true},
+    {id:uid(), number:38, codeNexa:'PARCHES', descricao:'Manchas / agregados', descripcion:'Parches', description:'Patches', photos:[], builtIn:true},
+    {id:uid(), number:39, codeNexa:'VETILLAS', descricao:'Vênulas', descripcion:'Vetillas', description:'Veinlets', photos:[], builtIn:true},
+    {id:uid(), number:40, codeNexa:'PATINA', descricao:'Pátina', descripcion:'Pátina', description:'Coating / patina', photos:[], builtIn:true}
   ]
 };
 
